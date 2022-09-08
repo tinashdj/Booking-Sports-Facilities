@@ -3,7 +3,7 @@ CREATE TABLE calls (
 	customer_name CHAR (50),
 	sentiment CHAR (20),
 	csat_score INT,
-	call_timestamp CHAR (10),
+	call_timestamp DATE DEFAULT CURRENT_DATE,
 	call_day CHAR (5),
 	reason CHAR (20),
 	city CHAR (50),
@@ -17,9 +17,9 @@ CREATE TABLE calls (
 SELECT * FROM calls
 
 
-COPY calls (id,	customer_name,	sentiment,	
-csat_score,	call_timestamp,	Call_Day,	reason,	city,	state,	
-channel,	response_time,	call_duration_minutes,	call_center
+COPY calls (id, customer_name, sentiment, csat_score,
+call_timestamp, Call_Day, reason, city, state, channel, 
+response_time, call_duration_minutes, call_center
 )
 FROM 'E:\Data Analyst\Projects\Call_Center.csv'
 DELIMITER ';'
