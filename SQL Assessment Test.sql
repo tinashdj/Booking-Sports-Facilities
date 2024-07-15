@@ -2,7 +2,7 @@
 -------------------------------------------------------------EXPLORING DATA---------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------
 
-BEGIN;
+
 
 ----1. Retrieve all the information from the cd.facilities table. ----
 SELECT * from cd.facilities;
@@ -78,3 +78,7 @@ INNER JOIN cd.members ON
 cd.members.memid = cd.bookings.memid 
 WHERE cd.members.firstname='David' 
 AND cd.members.surname='Farrell';
+
+
+
+$$ LANGUAGE plpgsql;
